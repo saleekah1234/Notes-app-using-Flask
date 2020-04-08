@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <!-- Ignore this if you don't know -->
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .container {
+            margin: auto;
+            width: 60%;
+        }
+        
+        .nav a {
+            text-decoration: none;
+        }
+    </style>
+    <!--  -->
+</head>
+
+<body>
+    <div class="container">
+        <h1> MY NOTES</h1>
+        <div class="nav">
+            <a href="/new">New Note</a>
+            <a href="/view">View All notes</a>
+            <hr>
+        </div>
+        {% block content %} {% endblock%}
+    </div>
+</body>
+
+</html>
