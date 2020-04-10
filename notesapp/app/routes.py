@@ -7,7 +7,7 @@ from app import db  #import database model (class) Mynotes class from model.py
 def home():
     return render_template('home.html')
 
-@app.route('/newnote', methods=['GET', 'POST'])
+@app.route('/new', methods=['GET', 'POST'])
 def newnote():
     form = forms.NoteForm()
 
@@ -15,7 +15,7 @@ def newnote():
         text = form.text.data
         n=Mynotes(text=text) #create instance of the model
         db.session.add(n)
-        db.seession.commit()
+        db.session.commit()
 
 
         newnote = {'text':text}
@@ -23,7 +23,7 @@ def newnote():
         return render_template('alert.html', newnote=newnote)
 
     return render_template('new.html', form=form)
-@app.route('/viewnote')
+@app.route('/view')
 def view():
     notes=Mynotes.query.all()
     return render_template("view.html",notes=notes)
