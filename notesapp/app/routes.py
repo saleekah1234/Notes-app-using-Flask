@@ -25,5 +25,13 @@ def newnote():
     return render_template('new.html', form=form)
 @app.route('/view')
 def view():
+    
     notes=Mynotes.query.all()
     return render_template("view.html",notes=notes)
+
+@app.route('/delete',methods=["DELETE"])
+def delete():
+    models.Mynotes.query().delete()
+    db.session.commit()
+
+    return render_template("view.html")

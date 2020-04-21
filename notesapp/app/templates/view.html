@@ -3,8 +3,10 @@
 {%block content %}
 
     {%for note in notes%}
-    <div>
-      p>{{note.text}}</p>
+    <div class='view'>
+      <p>>> &nbsp;{{note.text}}
+         <button class="delete" action='/delete' type="button">Delete</button>
+      </p>
     </div>
     {%endfor%}
 {% endblock%}
